@@ -385,7 +385,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*-------------------------------------
         6. Works 
 --------------------------------------*/
-.works{padding: 0 0 90px;}
+.works{padding: 0 0 90px; margin-top: 10%;}
 .works-content {margin-top: 73px;}
 
 .single-how-works{
@@ -722,7 +722,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*-------------------------------------
         10. Blog
 --------------------------------------*/
-.blog{padding:120px 0 90px;}
+.blog{padding:0 0 90px;}
 .blog-content{margin-top: 80px;}
 
 .single-blog-item{

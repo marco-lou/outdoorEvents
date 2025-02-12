@@ -41,3 +41,16 @@
 .cd-slider-nav {
     text-align: center;
 }
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* This will space the brand and navbar div to opposite sides */
+    align-items: center; /* Vertically align the items */
+}
+
+.navbar-brand {
+    order: 1; /* Ensure the brand stays on the left */
+}
+
+#tmNavbar {
+    order: 2; /* Ensure the navbar menu stays on the right */
+}

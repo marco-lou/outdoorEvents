@@ -121,6 +121,12 @@ html,body{height: 100%;}
 /*-------------------------------------
         2. Header-top
 --------------------------------------*/
+
+.logo-pic {
+    width: 200px;
+    height: 150px;
+    float: left; 
+  }
 .header-top{border-bottom:1px solid #f6f8fa;}
 
 .header-top ul li {display: inline-block;}

@@ -395,6 +395,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }*/
 
 /* Gallery */
+
 .grid-item {
 	margin-bottom: 20px;
 	padding-left: 1px;
@@ -404,6 +405,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 .grid-item:last-child { margin-bottom: 0; }
+
 
 .tm-img-gallery-container {
 	max-width: 320px;

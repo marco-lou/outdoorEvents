@@ -124,8 +124,10 @@ html,body{height: 100%;}
 
 .logo-pic {
     width: 200px;
-    height: 150px;
+    height: 180px;
     float: left; 
+    margin-left: 100px;
+    margin-top: 50px;
   }
 .header-top{border-bottom:1px solid #f6f8fa;}
 

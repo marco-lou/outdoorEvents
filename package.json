@@ -1,0 +1,23 @@
+{
+  "name": "outdoorevents",
+  "version": "1.0.0",
+  "description": "Explore scenic trails and connect with nature during our Adventure Hike &amp; Picnic! Discover breathtaking views, enjoy fresh air, and unwind with a delicious outdoor lunch. Whether you're an avid hiker or a casual explorer, this event promises a day of fun and relaxation in the great outdoors.",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marco-lou/outdoorEvents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marco-lou/outdoorEvents/issues"
+  },
+  "homepage": "https://github.com/marco-lou/outdoorEvents#readme"
+}

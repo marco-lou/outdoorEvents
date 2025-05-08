@@ -1,7 +1,7 @@
-name: SonarCloud
+name: SonarCloud Manual Scan
 
-on: 
-  workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   sonarcloud:
@@ -26,12 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1
-        with:
-          args: >
-            -Dsonar.projectKey=outdoor-events
-            -Dsonar.organization=marco-lou
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+      - name: Run SonarScanner via NPX
+        run: npx sonar-scanner
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

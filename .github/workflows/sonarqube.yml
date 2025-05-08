@@ -1,0 +1,56 @@
+name: CI with Tests and SonarQube
+
+on:
+  push:
+    branches: [ main ]
+  
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del codice
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Impostare Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      # 3. Installare le dipendenze
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Eseguire i test
+      - name: Run tests
+        run: npm test
+
+  sonarqube:
+    name: SonarQube Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Cache SonarQube packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+
+      - name: Run SonarQube analysis
+        run: |
+            ./gradlew sonarqube \
+            -Dsonar.projectKey=outdoor-events \
+            -Dsonar.host.url=http://host.docker.internal:9000 \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}

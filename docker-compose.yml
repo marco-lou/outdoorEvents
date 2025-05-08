@@ -19,3 +19,5 @@ services:
 
 volumes:
   jenkins_home:
+
+  #locale

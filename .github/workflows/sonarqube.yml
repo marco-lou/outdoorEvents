@@ -32,7 +32,7 @@ jobs:
   sonarqube:
 
     needs: test
-    
+
     name: SonarQube Analysis
     runs-on: ubuntu-latest
 
@@ -53,7 +53,7 @@ jobs:
 
       - name: Run SonarQube analysis
         run: |
-            ./gradlew sonarqube \
+            npx sonar-scanner \
             -Dsonar.projectKey=outdoor-events \
             -Dsonar.host.url=http://host.docker.internal:9000 \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}

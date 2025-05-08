@@ -30,6 +30,9 @@ jobs:
         run: npm test
 
   sonarqube:
+
+    needs: test
+    
     name: SonarQube Analysis
     runs-on: ubuntu-latest
 

@@ -256,6 +256,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     background-size:cover;
     text-align: center;
     height:800px;
+    flex-direction: row; /* layout orizzontale di default */
     z-index: 1;
 }
 .welcome-hero:before{
@@ -345,6 +346,24 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     height:  auto;
     margin-left:  12px;
 }
+
+@media only screen and (max-width: 767px) {
+    .welcome-hero-txt h2 {
+        margin-top: 50%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .welcome-hero-txt h2 {
+        margin-top: 50%;
+    }
+}
+@media only screen and (max-width: 767px), 
+       only screen and (max-device-width: 767px) {
+    .welcome-hero-txt h2 {
+        margin-top: 50%;
+    }
+}
+
 
 /*-------------------------------------
         5. List-topuics

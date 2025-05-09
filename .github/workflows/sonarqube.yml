@@ -7,7 +7,13 @@ jobs:
   sonarcloud:
     name: SonarCloud Scan
     runs-on: ubuntu-latest
+    #Il job test viene eseguito 3 volte in parallelo, una per ogni versione 
+    #di Node.js specificata nella matrice: 14, 16 e 18. Questo consente di 
+    #verificare che l'app funzioni correttamente su più versioni di Node.
 
+    #strategy:
+    #  matrix:
+    #   node-version: [14, 16, 18]
     steps:
 
       - uses: actions/checkout@v4
@@ -23,19 +29,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '14'  #se matrix -> ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests with coverage
+        #id: test
         run: npm run test -- --coverage
-
+  
+      # verifica tutti i steps di sopra 
       #- name: upload test report
-      #  if: failure()
+      #  if: failure()  o usa if:steps.test.outcome == 'failure' per lo step precedente
       #  uses: actions/upload-artifact@v3
       #  with:
-      #    name: test-report
+      #    name: test-report #se con matrix -> ${{ matrix.node-version }}-test-report
       #    path: htmlcov/
 
       - name: Check if coverage report exists

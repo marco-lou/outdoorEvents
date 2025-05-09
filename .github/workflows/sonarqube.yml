@@ -31,6 +31,13 @@ jobs:
       - name: Run tests with coverage
         run: npm run test -- --coverage
 
+      #- name: upload test report
+      #  if: failure()
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    name: test-report
+      #    path: htmlcov/
+
       - name: Check if coverage report exists
         run: ls -l coverage/lcov.info
 

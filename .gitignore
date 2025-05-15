@@ -1,5 +1,30 @@
+# Secrets e configurazioni locali
 .env
+*.env
+
+# Cartelle temporanee
 __pycache__/
+.cache/
+coverage/
+
+# Node.js
 node_modules/
-.vscode/
+dist/
+
+# Log e output
 *.log
+
+# VSCode
+.vscode/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

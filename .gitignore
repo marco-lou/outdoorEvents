@@ -7,11 +7,6 @@ __pycache__/
 .cache/
 coverage/
 
-
-
-# Log e output
-*.log
-
 # VSCode
 .vscode/
 

@@ -42,7 +42,7 @@ jobs:
           loki_address: "https://logs-prod-039.grafana.net/loki/api/v1/push"
           loki_username: ${{ secrets.LOKI_USERNAME }}
           loki_password: ${{ secrets.LOKI_PASSWORD }}
-          labels: '{"job": "sonar", "status": "started"}'
+          labels: '{"workflow": "sonarcloud", "job": "scan", "status": "success"}'
 
       - name: Run tests with coverage
         #id: test
@@ -65,12 +65,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: End SonarQube scan
+      - name: Send log to Loki
         uses: istone-you/send-log-to-loki@v1
         with:
-          message: "Finish SonarQube scan"
+          message: "SonarCloud scan completed with coverage"
           measurement: "finish"
-          loki_address: "https://logs-prod-039.grafana.net/loki/api/v1/push"
+          loki_address: https://logs-prod-039.grafana.net
           loki_username: ${{ secrets.LOKI_USERNAME }}
           loki_password: ${{ secrets.LOKI_PASSWORD }}
-          labels: '{"job": "sonar", "status": "finished"}'
+          labels: '{"workflow": "sonarcloud", "job": "scan", "status": "success"}'

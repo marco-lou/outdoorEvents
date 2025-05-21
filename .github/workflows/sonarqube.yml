@@ -73,7 +73,7 @@ jobs:
         with:
           message: "SonarCloud scan completed with coverage"
           measurement: "finish"
-          loki_address: https://logs-prod-039.grafana.net
+          loki_address: https://logs-prod-039.grafana.net/loki/api/v1/push
           loki_username: ${{ secrets.LOKI_USERNAME }}
           loki_password: ${{ secrets.LOKI_PASSWORD }}
           labels: '{"workflow": "sonarcloud", "job": "scan", "status": "success"}'

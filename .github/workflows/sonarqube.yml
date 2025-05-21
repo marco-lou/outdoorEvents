@@ -37,16 +37,6 @@ jobs:
           npm install
      
 
-      - name: Start SonarQube scan
-        uses: istone-you/send-log-to-loki@v1
-        with:
-          message: "Start SonarQube scan"
-          measurement: "start"
-          loki_address: https://logs-prod-039.grafana.net/loki/api/v1/push
-          loki_username: ${{ secrets.LOKI_USERNAME }}
-          loki_password: ${{ secrets.LOKI_PASSWORD }}
-          labels: '{"workflow": "sonarcloud", "job": "scan", "status": "success"}'
-
       - name: Run tests with coverage
         #id: test
         run: npm run test -- --coverage
